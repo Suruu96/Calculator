@@ -1,0 +1,108 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f0f0f0;
+}
+
+.calculator-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.heart-image {
+    width: 67px; /* Adjust the size as needed */
+    height: 68px; /* Adjust the size as needed */
+    margin-right: 10px;
+}
+
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold; /* Bold digits */
+    border: none;
+    border-radius: 50%; /* Make buttons round */
+    outline: none;
+    transition: background-color 0.2s;
+    width: 80px; /* Make sure buttons are circular */
+    height: 80px; /* Make sure buttons are circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator-grid > button.operation {
+    background-color: #e49e9e; /* Dark color for operation buttons */
+    color: white;
+}
+
+.calculator-grid > button.operation:hover {
+    background-color: #c49090; /* Slightly darker on hover */
+}
+
+.calculator-grid > button.number {
+    background-color: #ffcccb; /* Light pink for number buttons */
+    color: black;
+}
+
+.calculator-grid > button.number:hover {
+    background-color: #ffb6c1; /* Slightly darker pink on hover */
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: #151414;
+    display: flex;
+    align-items: center; /* Align items center horizontally */
+    justify-content: space-between;
+    flex-direction: row; /* Change to row to fit image and text side by side */
+    
+    padding: 10px;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    height: 100px;
+}
+
+
+.output .previous-operand {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.25rem;
+}
+
+.output .current-operand {
+    color: white;
+    font-size: 2.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
